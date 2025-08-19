@@ -61,7 +61,7 @@ class ParamMLE(Param):
 
     def __init__(self):
         self._numerator = 1
-        self._denominator = 1
+        self._denominator = 9
 
     def value(self):
         return self._numerator / float(self._denominator)
@@ -74,7 +74,7 @@ class ParamMLE(Param):
         assert type(self) == type(other)
 
         self._numerator += other._numerator - 1
-        self._denominator += other._denominator - 1
+        self._denominator += other._denominator - 9
 
         return self
 
@@ -87,7 +87,7 @@ class ParamEM(Param):
 
     def __init__(self):
         self._numerator = 1
-        self._denominator = 1
+        self._denominator = 9
 
     def value(self):
         return min(self._numerator / float(self._denominator), 1 - self.PROB_MIN)
